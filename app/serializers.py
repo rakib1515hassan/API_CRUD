@@ -1,17 +1,17 @@
 from rest_framework import serializers
 from app.models import Student, STUDENT_CLASS, GENDER
 
-from rest_framework import serializers
 
 
 
 class StudentSerializer(serializers.Serializer):
-    name          = serializers.CharField(max_length=100, allow_blank=True, required=False)
+    id            = serializers.IntegerField(read_only=True)
+    name          = serializers.CharField(max_length=100, allow_blank=True, required=True)
     student_class = serializers.ChoiceField(choices=STUDENT_CLASS, default='vi')
     gender        = serializers.ChoiceField(choices=GENDER, default='Male')
-    roll          = serializers.IntegerField(allow_null=True, required=False)
+    roll          = serializers.IntegerField(allow_null=True, required=True)
     picture       = serializers.ImageField(allow_null=True, required=False)
-    email         = serializers.EmailField(max_length=50)
+    email         = serializers.EmailField(max_length=50, required=True)
     waiver        = serializers.BooleanField(default=False)
     date_of_birth = serializers.DateField()
     created_at    = serializers.DateField(read_only=True)

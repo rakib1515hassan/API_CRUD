@@ -1,1 +1,7 @@
 API = Application Programming Interface
+
+
+from app.models import Student
+from app.serializers import StudentSerializer
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
