@@ -1,0 +1,49 @@
+{% extends 'Note.html' %}
+{% load static %}
+{% block titel %}Note | De-Serialization{% endblock titel %}
+{% block d_se_active %}active{% endblock d_se_active %}
+{% block main %}
+<div>
+    <div>
+        <h1 class="text-center mt-5"><b><u style="color: red;">De-Serialization Definitions</u></b></h1>
+        <p class="ml-5 mr-5" style="font-size: 19px; color: rgb(13, 14, 14);">Serializars are also responsible for deserialization
+         which means it allows parsed data to be converted back into complex types, after first validation the incoming data.</p>
+    </div>
+
+    <div>
+        <h1 class="text-center mt-5"><b><u style="color: red;">De Serialization Map</u></b></h1>
+        <div class="container d-flex justify-content-center">
+            <img src="{% static 'img/de_serialization.jpg' %}" alt="" style="width: 80%; height: 30%;">
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center mt-5"><b><u style="color: red;">BytesIO</u></b></h1>
+        <p class="ml-5" style="font-size: 19px; color: royalblue;">>><b>import io</b></p>
+        <p class="ml-5" style="font-size: 19px; color: rgb(13, 14, 14);">এর মাধ্যমে json daat কে json object তে convart করা হয়।</p>
+        <div class="container d-flex justify-content-center">
+            <img src="{% static 'img/bytesIO.jpg' %}" alt="" style="width: 80%; height: 30%;">
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center mt-5"><b><u style="color: red;">JSONParser()</u></b></h1>
+        <p class="ml-5" style="font-size: 19px; color: royalblue;">>><b>from rest_framework.parsers import JSONParser</b></p>
+        <p class="ml-5" style="font-size: 19px; color: rgb(13, 14, 14);">এর মাধ্যমে json daat কে python native data তে convart করা হয়।</p>
+        <div class="container d-flex justify-content-center">
+            <img src="{% static 'img/json_parser.jpg' %}" alt="" style="width: 80%; height: 30%;">
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center mt-5"><b><u style="color: red;">Complex to JSON Full Process</u></b></h1>
+        <p class="ml-5" style="font-size: 19px; color: rgb(13, 14, 14);">এর মাধ্যমে json কে python data তে convart করা হয়।</p>
+        <div class="container d-flex justify-content-center">
+            <img src="{% static 'img/complex to json.jpg' %}" alt="" style="width: 80%; height: 30%;">
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock main %}

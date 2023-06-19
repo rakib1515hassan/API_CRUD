@@ -1,0 +1,48 @@
+{% extends 'Note.html' %}
+{% load static %}
+{% block titel %}Note | Serialization{% endblock titel %}
+{% block se_active %}active{% endblock se_active %}
+{% block main %}
+<div>
+
+    <div>
+        <h1 class="text-center mt-5"><b><u style="color: red;">Serialization Definitions</u></b></h1>
+        <p class="ml-5 mr-5" style="font-size: 19px; color: rgb(13, 14, 14);">In Django REST Framework, Serializers are responsible for converting complex data such as query sets and model instances to native Python datatype (called serialization) that can then be easily rendered into JSON, XML, or other content type which is understandable by Front End.</p>
+    </div>
+
+    <div>
+        <h1 class="text-center mt-5"><b><u style="color: red;">Serialization Map</u></b></h1>
+        <div class="container d-flex justify-content-center">
+            <img src="{% static 'img/serialization.jpg' %}" alt="" style="width: 80%; height: 30%;">
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center mt-5"><b><u style="color: red;">Dumps</u></b></h1>
+        <p class="ml-5" style="font-size: 19px; color: royalblue;">>><b>import json</b></p>
+        <p class="ml-5" style="font-size: 19px; color: rgb(13, 14, 14);">এর মাধ্যমে python data কে json এ convart করা হয়।</p>
+        <div class="container d-flex justify-content-center">
+            <img src="{% static 'img/dumps.jpg' %}" alt="" style="width: 80%; height: 30%;">
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center mt-5"><b><u style="color: red;">Loads</u></b></h1>
+        <p class="ml-5" style="font-size: 19px; color: royalblue;">>><b>import json</b></p>
+        <p class="ml-5" style="font-size: 19px; color: rgb(13, 14, 14);">এর মাধ্যমে json কে python data তে convart করা হয়।</p>
+        <div class="container d-flex justify-content-center">
+            <img src="{% static 'img/loads.jpg' %}" alt="" style="width: 80%; height: 30%;">
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center mt-5"><b><u style="color: red;">Complex to JSON Full Process</u></b></h1>
+        <div class="container d-flex justify-content-center">
+            <img src="{% static 'img/complex to json.jpg' %}" alt="" style="width: 80%; height: 30%;">
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock main %}

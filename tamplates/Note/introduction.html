@@ -1,0 +1,29 @@
+{% extends 'Note.html' %}
+{% load static %}
+{% block titel %}Note | Introduction{% endblock titel %}
+{% block i_active %}active{% endblock i_active %}
+{% block main %}
+<div>
+  <h3 class="text-center mt-5"><b><u>Application programming interface(API)-Map</u></b></h3>
+  <div class="container d-flex justify-content-center">
+    <img src="{% static 'img/API Map.png' %}" alt="" style="width: 80%; height: 30%;">
+  </div>
+
+  <h3 class="text-center mt-5 mb-3"><b><u>API Operations</u></b></h3>
+  <div class="container d-flex justify-content-center mb-5">
+    <img src="{% static 'img/CRUD.jpg' %}" alt="" style="width: 80%; height: 30%;">
+  </div>
+
+  <h3 class="text-center mt-5 mb-3"><b><u>API Resource URL</u></b></h3>
+  <div class="container d-flex justify-content-center mb-5">
+    <img src="{% static 'img/api_resource_url.jpg' %}" alt="" style="width: 80%; height: 30%;">
+  </div>
+  <h3 class="text-center"><b><u>Http Status Code</u></b></h3>
+  <div class="container d-flex justify-content-center">
+    <img src="{% static 'img/HttpStatusCode.jpg' %}" alt="" style="width: 80%; height: 30%;">
+  </div>
+</div>
+
+
+
+{% endblock main %}
