@@ -5,6 +5,6 @@ from CRUD_app.views import *
 
 
 urlpatterns = [
-    # path('introduction/', introduction, name='introduction'),
+    path('teacher_crud_api/', teacher_crud_api),
 
 ]
