@@ -6,5 +6,6 @@ from CRUD_app.views import *
 
 urlpatterns = [
     path('teacher_crud_api/', teacher_crud_api),
+    path('Teacher_crud_classApiView/', Teacher_crud_classApiView.as_view()),
 
 ]

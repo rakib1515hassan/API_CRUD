@@ -2,7 +2,8 @@ import requests
 import io
 import json
 
-URL = "http://127.0.0.1:8000/crud/teacher_crud_api/"
+# URL = "http://127.0.0.1:8000/crud/teacher_crud_api/"
+URL = "http://127.0.0.1:8000/crud/Teacher_crud_classApiView/"
 
 
 
@@ -20,7 +21,7 @@ def get_data(id = None):
     print(data)
 
 # Call get_data to Retrube data from api
-# get_data(3)
+# get_data()
 
 
 def post_data():
@@ -41,7 +42,7 @@ def post_data():
 
 def update_data():
     data = {
-        'id'  : 7,
+        'id'  : 8,
         'name': 'Korim',
     }
 
@@ -57,7 +58,7 @@ def update_data():
 
 def delete_data():
     data = {
-        'id': 7,
+        'id': 8,
     }
 
     json_data = json.dumps(data)
