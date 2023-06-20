@@ -100,6 +100,7 @@ Example:-
 
 
 # NOTE---------------------------------------( De-Serialization )---------------------------------------------
+# JSON Data -> Python Native Data -> Complex Data
 
 # BytesIO() make stream data
 stream = io.BytesIO(json_data)
@@ -110,3 +111,31 @@ parsed_data = JSONParser().parse(stream)
 
 # Creating Serializer Object 
 serializer_obj = StudentSerializer(data = parsed_data)
+
+
+
+# NOTE 3rd parti applicatin থেকে কোন POST request কিভাবে পাঠাতে হয়-------------------------------------------
+
+"""
+    import requests
+    import json
+    URL = "http://127.0.0.1:8000/note/3rd-parti-api/"
+
+
+    raw_data = {
+        'name':'Merina',
+        'student_class':'x',
+        'gender':'Female',
+        'roll':420,
+        'email':'merina@gmail.com',
+        'waiver':'False',
+        'description':"Merina is't a good student.",
+        'date_of_birth':'1999-02-15',
+    }
+
+    json_data = json.dumps(raw_data)
+    res_ponce = requests.post(url = URL, data = json_data)
+
+    data = res_ponce.json()
+    print(data)
+"""

@@ -11,6 +11,7 @@ class StudentSerializer(serializers.Serializer):
     picture       = serializers.ImageField(allow_null=True, required=False)
     email         = serializers.EmailField(max_length=50, required=True)
     waiver        = serializers.BooleanField(default=False)
+    description   = serializers.CharField(max_length=200)
     date_of_birth = serializers.DateField()
     created_at    = serializers.DateField(read_only=True)
 
@@ -18,7 +19,10 @@ class StudentSerializer(serializers.Serializer):
     def create(self, validated_data):
         return Student.objects.create(**validated_data)
 
-    def update(self, instance, validated_data):
+
+    # instance = Old data যা আমাদের Database এ আগেথেকে save আছে।
+    # validated_data = New data যা user update করার জন্যে পেরন করেছে।
+    def update(self, instance, validated_data):   
         instance.name          = validated_data.get('name', instance.name)
         instance.student_class = validated_data.get('student_class', instance.student_class)
         instance.gender        = validated_data.get('gender', instance.gender)
@@ -26,6 +30,7 @@ class StudentSerializer(serializers.Serializer):
         instance.picture       = validated_data.get('picture', instance.picture)
         instance.email         = validated_data.get('email', instance.email)
         instance.waiver        = validated_data.get('waiver', instance.waiver)
+        instance.description   = validated_data.get('description', instance.description)
         instance.date_of_birth = validated_data.get('date_of_birth', instance.date_of_birth)
         instance.save()
         return instance
