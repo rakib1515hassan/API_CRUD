@@ -45,16 +45,7 @@ def Display_a_data_f(request, pk):
     # return HttpResponse(json_data, content_type='application/json')
     return JsonResponse(serializer.data) # উপরের ২ লাইন এর পরিবর্তে আমরা JsonResponse ব্যবহার করতে পারি
     
-    # try:
-    #     obj = Student.objects.get(id=pk) #Complex data or Querry 
-    #     serializer = StudentSerializer(obj) # Python data type
 
-    #     # json_data = JSONRenderer().render(serializer.data) #covart in to json data
-    #     # return HttpResponse(json_data, content_type='application/json')
-    #     return JsonResponse(serializer.data) # উপরের ২ লাইন এর পরিবর্তে আমরা JsonResponse ব্যবহার করতে পারি
-    
-    # except Student.DoesNotExist:
-    #     return Response(StudentSerializer.errors, status=status.HTTP_404_NOT_FOUND)
 
     
 

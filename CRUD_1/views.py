@@ -96,6 +96,14 @@ def teacher_crud_api(request):
     
 
 
+
+
+
+
+
+
+
+
 @method_decorator( csrf_exempt, name= 'dispatch' )
 class Teacher_crud_classApiView(View):
     def get(self, request, *args, **kwargs):
@@ -173,5 +181,6 @@ class Teacher_crud_classApiView(View):
         # json_data = JSONRenderer().render(res)
         # return HttpResponse(json_data, content_type = 'application/json')
         return JsonResponse( res, safe=False ) # উপরের ২ লাইন এর পরিবর্তে
+
 
 
