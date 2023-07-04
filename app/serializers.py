@@ -3,7 +3,7 @@ from app.models import Student, STUDENT_CLASS, GENDER
 
 
 class StudentSerializer(serializers.Serializer):
-    id            = serializers.IntegerField(read_only=True)
+    # id            = serializers.IntegerField(read_only=True)
     name          = serializers.CharField(max_length=100, allow_blank=True, required=True)
     student_class = serializers.ChoiceField(choices=STUDENT_CLASS, default='vi')
     gender        = serializers.ChoiceField(choices=GENDER, default='Male')
@@ -17,6 +17,9 @@ class StudentSerializer(serializers.Serializer):
 
 
     def create(self, validated_data):
+        # print("------------------")
+        # print(validated_data)
+        # print("------------------")
         return Student.objects.create(**validated_data)
 
 

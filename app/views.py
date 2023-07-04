@@ -47,19 +47,19 @@ def Display_a_data_f(request, pk):
     
 
 
-    
 
-# class DisplayDataAPIView(APIView):
-#     def get(self, request, pk):
-#         try:
-#             obj = Student.objects.get(id=pk)  # Complex data or Query
-#         except Student.DoesNotExist:
-#             return Response("Student not found", status=status.HTTP_404_NOT_FOUND)
+class Display_a_data_c(APIView):
+    def get(self, request, pk):
+        try:
+            obj = Student.objects.get(id=pk)  # Complex data or Query
+            serializer = StudentSerializer(obj)  # Python data type
+            json_data = serializer.data  # Convert to JSON data
+            return Response(json_data, status=status.HTTP_200_OK)
+        
+        except Student.DoesNotExist:
+            return Response("Student not found", status=status.HTTP_404_NOT_FOUND)
 
-#         serializer = StudentSerializer(obj)  # Python data type
-#         json_data = serializer.data  # Convert to JSON data
-
-#         return Response(json_data, content_type='application/json')
+        
 
 
 # ---------------------------( 2 )--------------------------------------------------
@@ -75,17 +75,18 @@ def Display_all_data_f(request):
                                          # কে safe=False করে দিতে হবে।
 
 
+class Display_all_data_c(APIView):
+    def get(self, request):
+        obj = Student.objects.all()  # Complex data or Query
+        serializer = StudentSerializer(obj, many=True)  # Python data type
+        json_data = serializer.data  # Convert to JSON data
+        return Response(json_data, status=status.HTTP_200_OK)
+        
+
+
+
 
 # ---------------------------( 3 )--------------------------------------------------
-
-
-
-
-
-
-
-
-
 
 ## ---------------------------- Display With GET Method --------------------------------------
 @api_view(['GET'])
@@ -96,13 +97,6 @@ def display_function_view(request):
         return Response(serializer.data, status=status.HTTP_200_OK)
     return Response(StudentSerializer.errors, status=status.HTTP_404_NOT_FOUND)
 
-
-
-class display_class_view(APIView):
-    def get(self, request):
-        obj = Student.objects.all()
-        serializer = StudentSerializer(obj, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
     
 
 ## ---------------------------- Display With POST Method --------------------------------------
@@ -115,6 +109,15 @@ def display_function_view_POST(request):
             serialize.save()
             return Response(serialize.data, status=status.HTTP_200_OK)
         return Response(StudentSerializer.errors, status=status.HTTP_404_NOT_FOUND)
+    
+
+class display_APIView_POST(APIView):
+    def post(self, request):
+        serialize = StudentSerializer(data= request.data)
+        if serialize.is_valid():
+            serialize.save()
+            return Response(serialize.data, status=status.HTTP_200_OK)
+        return Response(serialize.errors, status=status.HTTP_404_NOT_FOUND)
 
 
 ## --------------------------------------------------------------------------------------------

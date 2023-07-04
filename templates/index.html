@@ -15,6 +15,7 @@
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap4.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 
+
 <body>
     <!-- Header Start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -59,27 +60,27 @@
                     <tbody>
                       <tr>
                         <td>1.1</td>
-                        <td></td>
+                        <td>GET</td>
                         <td>Display data id=1 that pass on url</td>
                         <td style="color: #19ae70;">Function Base</td>
-                        <td>Display_a_data_f/1</td>
+                        <td>Display_a_data_f/1/</td>
                         <td>
                             <a class="btn btn-danger btn-sm" href="{% url 'Display_a_data_f' 1 %}">GO</a>
                         </td>
                       </tr>
                       <tr>
                         <td>1.2</td>
-                        <td></td>
+                        <td>GET</td>
                         <td>Display data id=1 that pass on url</td>
-                        <td style="color: #ae2cb0;">Class Base</td>
-                        <td>Invelid</td>
+                        <td style="color: #ae2cb0;">APIView</td>
+                        <td>Display_a_data_c/1/</td>
                         <td>
-                            <a class="btn btn-danger btn-sm" href="">GO</a>
+                            <a class="btn btn-danger btn-sm" href="{% url 'Display_a_data_c' 1 %}">GO</a>
                         </td>
                       </tr>
                       <tr>
                         <td>2.1</td>
-                        <td></td>
+                        <td>GET</td>
                         <td>Display All Data</td>
                         <td style="color: #19ae70;">Function Base</td>
                         <td>Display_all_data_f/</td>
@@ -89,14 +90,45 @@
                       </tr>
                       <tr>
                         <td>2.2</td>
-                        <td></td>
+                        <td>GET</td>
                         <td>Display All Data</td>
-                        <td style="color: #ae2cb0;">Class Base</td>
-                        <td>Invelid</td>
+                        <td style="color: #ae2cb0;">APIView</td>
+                        <td>Display_all_data_c/</td>
                         <td>
-                            <a class="btn btn-danger btn-sm" href="">GO</a>
+                            <a class="btn btn-danger btn-sm" href="{% url 'Display_all_data_c' %}">GO</a>
                         </td>
                       </tr>
+                      <tr>
+                        <td>2.3</td>
+                        <td>GET</td>
+                        <td>Display All Data</td>
+                        <td style="color: #19ae70;">@api_view(['GET'])</td>
+                        <td>Display_all_data_c/</td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="{% url 'display_function_view' %}">GO</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.1</td>
+                        <td>POST</td>
+                        <td>Create</td>
+                        <td style="color: #19ae70;">@api_view(['POST'])</td>
+                        <td>create_f/</td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="{% url 'display_function_view_POST' %}">GO</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3.2</td>
+                        <td>POST</td>
+                        <td>Create</td>
+                        <td style="color: #19ae70;">APIView</td>
+                        <td>create_f/</td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="{% url 'display_APIView_POST' %}">GO</a>
+                        </td>
+                      </tr>
+                      
                       
                       
 
